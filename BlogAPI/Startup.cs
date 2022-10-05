@@ -33,6 +33,7 @@ namespace BlogAPI
 
             // Repositories
             services.AddScoped<IUser, UserRepository>();
+            services.AddScoped<ITheme, ThemeRepository>();
 
             // Controllers
             services.AddCors();
