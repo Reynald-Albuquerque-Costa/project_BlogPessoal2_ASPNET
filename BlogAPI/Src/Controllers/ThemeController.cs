@@ -29,6 +29,9 @@ namespace BlogAPI.Src.Controllers
 
         #region Methods
 
+        /// <summary> 
+        /// Pegar todos os temas
+        /// </summary> 
         [HttpGet]
         public async Task<ActionResult> PegarTodosTemasAsync()
         {
@@ -39,6 +42,9 @@ namespace BlogAPI.Src.Controllers
             return Ok(list);
         }
 
+        /// <summary> 
+        /// Pegar tema pelo Id
+        /// </summary> 
         [HttpGet("id/{idTheme}")]
         public async Task<ActionResult> PegarTemaPeloIdAsync([FromRoute] int idTheme)
         {
@@ -52,6 +58,9 @@ namespace BlogAPI.Src.Controllers
             }
         }
 
+        /// <summary> 
+        /// Criar novo tema
+        /// </summary> 
         [HttpPost]
         public async Task<ActionResult> NovoTemaAsync([FromBody] Theme theme)
         {
@@ -60,6 +69,9 @@ namespace BlogAPI.Src.Controllers
             return Created($"api/Temas", theme);
         }
 
+        /// <summary> 
+        /// Atualizar tema
+        /// </summary> 
         [HttpPut]
         public async Task<ActionResult> AtualizarTema([FromBody] Theme theme)
         {
@@ -74,6 +86,9 @@ namespace BlogAPI.Src.Controllers
             }
         }
 
+        /// <summary> 
+        /// Deletar tema
+        /// </summary> 
         [HttpDelete("delete/{idTheme}")]
         public async Task<ActionResult> DeletarTema([FromRoute] int idTheme)
         {

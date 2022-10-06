@@ -28,6 +28,9 @@ namespace BlogAPI.Src.Controllers
 
         #region Methods
 
+        /// <summary>
+        /// Pegar usuario pelo Email
+        /// </summary>
         [HttpGet("email/{emailUser}")]
         public async Task<ActionResult> PegarUsuarioPeloEmailAsync([FromRoute] string emailUser)
         {
@@ -38,6 +41,9 @@ namespace BlogAPI.Src.Controllers
             return Ok(user);
         }
 
+        /// <summary>
+        /// Criar novo Usuario 
+        /// </summary> 
         [HttpPost]
         public async Task<ActionResult> NovoUsuarioAsync([FromBody] User user)
         {

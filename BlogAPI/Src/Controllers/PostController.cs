@@ -29,6 +29,9 @@ namespace BlogAPI.Src.Controllers
 
         #region Methods
 
+        /// <summary> 
+        /// Pegar todos as postagem
+        /// </summary> 
         [HttpGet]
         public async Task<ActionResult> PegarTodasPostagensAsync()
         {
@@ -39,6 +42,9 @@ namespace BlogAPI.Src.Controllers
             return Ok(list);
         }
 
+        /// <summary> 
+        /// Pegar postagem pelo ID
+        /// </summary> 
         [HttpGet("id/{idPost}")]
         public async Task<ActionResult> PegarPostagemPeloIdAsync([FromRoute] int idPost)
         {
@@ -52,6 +58,9 @@ namespace BlogAPI.Src.Controllers
             }
         }
 
+        /// <summary> 
+        /// Criar nova postagem
+        /// </summary> 
         [HttpPost]
         public async Task<ActionResult> NovaPostagemAsync([FromBody] Post post)
         {
@@ -66,6 +75,9 @@ namespace BlogAPI.Src.Controllers
             }
         }
 
+        /// <summary> 
+        /// Atualizar postagem
+        /// </summary> 
         [HttpPut]
         public async Task<ActionResult> AtualizarPostagemAsync([FromBody] Post post)
         {
@@ -80,6 +92,9 @@ namespace BlogAPI.Src.Controllers
             }
         }
 
+        /// <summary> 
+        /// Deletar postagem
+        /// </summary> 
         [HttpDelete("delete/{idPost}")]
         public async Task<ActionResult> DeletarPostagem([FromRoute] int idPost)
         {
