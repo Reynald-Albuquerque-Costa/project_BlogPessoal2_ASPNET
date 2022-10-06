@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System;
 using BlogAPI.Src.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BlogAPI.Src.Controllers 
 {
@@ -33,6 +34,7 @@ namespace BlogAPI.Src.Controllers
         /// Pegar todos as postagem
         /// </summary> 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult> PegarTodasPostagensAsync()
         {
             var list = await _repository.PegarTodasPostagensAsync();
@@ -46,6 +48,7 @@ namespace BlogAPI.Src.Controllers
         /// Pegar postagem pelo ID
         /// </summary> 
         [HttpGet("id/{idPost}")]
+        [Authorize]
         public async Task<ActionResult> PegarPostagemPeloIdAsync([FromRoute] int idPost)
         {
             try
@@ -62,6 +65,7 @@ namespace BlogAPI.Src.Controllers
         /// Criar nova postagem
         /// </summary> 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult> NovaPostagemAsync([FromBody] Post post)
         {
             try
@@ -79,6 +83,7 @@ namespace BlogAPI.Src.Controllers
         /// Atualizar postagem
         /// </summary> 
         [HttpPut]
+        [Authorize]
         public async Task<ActionResult> AtualizarPostagemAsync([FromBody] Post post)
         {
             try
@@ -96,6 +101,7 @@ namespace BlogAPI.Src.Controllers
         /// Deletar postagem
         /// </summary> 
         [HttpDelete("delete/{idPost}")]
+        [Authorize]
         public async Task<ActionResult> DeletarPostagem([FromRoute] int idPost)
         {
             try

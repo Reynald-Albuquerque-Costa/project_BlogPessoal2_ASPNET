@@ -37,7 +37,8 @@ namespace BlogAPI.Src.Repositories.Implements
                     Email = user.Email,
                     Name = user.Name,
                     Password = user.Password,
-                    Photo = user.Photo
+                    Photo = user.Photo,
+                    Type = user.Type
                 });
             await _context.SaveChangesAsync();
 

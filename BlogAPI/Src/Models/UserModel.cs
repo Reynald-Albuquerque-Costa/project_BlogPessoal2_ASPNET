@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using BlogAPI.Src.Utilities;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
@@ -17,6 +18,7 @@ namespace BlogAPI.Src.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string Photo { get; set; }
+        public TypeUser Type { get; set; }
 
         [JsonIgnore, InverseProperty("Creator")]
         public List<Post> Mypost { get; set; }
